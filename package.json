@@ -21,7 +21,7 @@
     "prepublish": "grunt prepublish"
   },
   "dependencies": {
-    "asar": "0.4.2"
+    "asar": "0.4.3"
   },
   "devDependencies": {
     "grunt": "~0.4.1",

@@ -64,6 +64,9 @@ fs.statSync = (p) ->
   return statSync.apply this, arguments unless isAsar
   asarStatsToFsStats asar.statFile(asarPath, filePath)
 
+# lstatSync is not implemented yet.
+fs.lstatSync = fs.statSync
+
 realpathSync = fs.realpathSync
 fs.realpathSync = (p) ->
   [isAsar, asarPath, filePath] = splitPath p
@@ -71,3 +74,10 @@ fs.realpathSync = (p) ->
   stat = asar.statFile(asarPath, filePath)
   filePath = stat.link if stat.link
   path.join realpathSync(asarPath), filePath
+
+readdirSync = fs.readdirSync
+fs.readdirSync = (p) ->
+  [isAsar, asarPath, filePath] = splitPath p
+  return readdirSync.apply this, arguments unless isAsar
+  stat = asar.statFile(asarPath, filePath, true)
+  file for file,_ of stat.files
