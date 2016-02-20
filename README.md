@@ -1,6 +1,6 @@
 # asar-require
 
-Enable `require` to read scripts in [asar][asar] pacakges.
+Enable `require` to read scripts in [asar] packages.
 
 ## Usage
 
