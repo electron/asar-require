@@ -6,16 +6,16 @@
   "licenses": [
     {
       "type": "MIT",
-      "url": "http://github.com/atom/asar-require/raw/master/LICENSE"
+      "url": "http://github.com/electron/asar-require/raw/master/LICENSE"
     }
   ],
-  "homepage": "https://github.com/atom/asar-require",
+  "homepage": "https://github.com/electron/asar-require",
   "repository": {
     "type": "git",
-    "url": "https://github.com/atom/asar-require.git"
+    "url": "https://github.com/electron/asar-require.git"
   },
   "bugs": {
-    "url": "https://github.com/atom/asar-require/issues"
+    "url": "https://github.com/electron/asar-require/issues"
   },
   "scripts": {
     "prepublish": "grunt prepublish"

@@ -9,4 +9,4 @@ require('asar-require');
 require('/path/to/archive.asar/script');
 ```
 
-[asar]: https://github.com/atom/asar
+[asar]: https://github.com/electron/asar
