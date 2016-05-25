@@ -1,6 +1,10 @@
 asar = require 'asar'
 fs   = require 'fs'
 path = require 'path'
+try
+  node_module = require 'module'
+catch error
+  node_module = null
 
 # Separate asar package's path from full path.
 splitPath = (p) ->
@@ -71,3 +75,11 @@ fs.realpathSync = (p) ->
   stat = asar.statFile(asarPath, filePath)
   filePath = stat.link if stat.link
   path.join realpathSync(asarPath), filePath
+
+if node_module and node_module._findPath
+  module_findPath = node_module._findPath
+
+  node_module._findPath = (request, paths, isMain) ->
+    [isAsar, asarPath, filePath] = splitPath request
+    return module_findPath.apply this, arguments unless isAsar
+    request
