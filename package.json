@@ -2,7 +2,7 @@
   "main": "./lib/require.js",
   "name": "asar-require",
   "description": "Enable 'require' asar packages",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "licenses": [
     {
       "type": "MIT",
